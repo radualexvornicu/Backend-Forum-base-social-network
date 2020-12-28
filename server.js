@@ -1,8 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+var ESAPI = require('node-esapi');
+const helmet = require("helmet");
 
 const app = express();
+app.use(ESAPI.middleware());
+app.use(helmet());
 
 var corsOptions = {
   origin: "http://localhost:8081"
